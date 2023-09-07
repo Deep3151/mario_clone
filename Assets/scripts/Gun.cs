@@ -19,40 +19,39 @@ public class Gun : MonoBehaviour
 
     private bool BurstFiring = false;
 
-    private float FireTimer = .35f;
+    [SerializeField] private float FireTimer = .35f;
+    private Coroutine m_routine = null;
 
     void Update()
     {
-        if (Time.time - fireRate < FireTimer) return;
-
-        if (ShootInput)
+        if (Input.GetKeyDown(cycleFireModeKey))
         {
-            Shoot();
-
-            if (fireMode == FireMode.Brust)
-            {
-               BurstFiring = true;
-               StartCoroutine(BrustFire());
-            }
-
+            CycelFireMode();
         }
-
-
         switch (fireMode)
         {
             case FireMode.Auto:
                 ShootInput = Input.GetMouseButton(0);
                 break;
 
-            default:
-                ShootInput = Input.GetMouseButtonDown(0);
+            case FireMode.Semi:
+            case FireMode.Brust:
+                ShootInput = Input.GetMouseButton(0);
                 break;
         }
-
-        if (Input.GetKeyDown(cycleFireModeKey))
+        if (ShootInput && fireMode == FireMode.Semi || ShootInput && fireMode == FireMode.Auto)
         {
-            CycelFireMode();
+            if (Time.time - fireRate < FireTimer) return;
+            Shoot();
         }
+        else if (ShootInput && fireMode == FireMode.Brust)
+        {
+            if (Time.time - fireRate < FireTimer) return;
+            if (m_routine == null)
+                m_routine = StartCoroutine(BrustFire());
+        }
+
+
 
 
     }
@@ -73,25 +72,28 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
+
         fireRate = Time.time;
         var bullet = Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(bulletPoint.forward * bulletSpeed, ForceMode.VelocityChange);
+        ShootInput = false;
     }
 
     private IEnumerator BrustFire()
     {
-
-        yield return new WaitForSeconds(fireRate);
+        fireRate = Time.time;
         Shoot();
 
-        yield return new WaitForSeconds(fireRate);
+        yield return new WaitForEndOfFrame();
         Shoot();
 
-        yield return new WaitForSeconds(fireRate);
+        yield return new WaitForEndOfFrame();
         Shoot();
 
-        yield return new WaitForSeconds(fireRate);
+        yield return new WaitForEndOfFrame();
         BurstFiring = false;
+        ShootInput = false;
+        m_routine = null;
     }
 
 }

@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, life);
         Physics.IgnoreLayerCollision(7, 8);
+        Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
     }
 
     void OnCollisionEnter(Collision collision)
