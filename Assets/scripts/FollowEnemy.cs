@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class FollowEnemy : MonoBehaviour
 {
 
     public Transform targetObj;
@@ -16,6 +16,6 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 3 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 2 * Time.deltaTime);
     }
 }

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyNavmashAgent : MonoBehaviour
+public class EnemyFollow : MonoBehaviour
 {
-
     public NavMeshAgent enemy;
     public Transform player;
 
