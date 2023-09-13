@@ -20,4 +20,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scene/EndAcreen.unity
     guid: 8af1f535e9a132249a3498dbe91185bf
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 97809aac2605728438c65eb6101df262, type: 2}
