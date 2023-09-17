@@ -17,7 +17,7 @@ public class FollowEnemy : MonoBehaviour
         if(getDistence() <= chasingDistence)
         {
             transform.LookAt(player.transform);
-            transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 2 * Time.deltaTime);
+           /* transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 2 * Time.deltaTime);*/
             
 
 

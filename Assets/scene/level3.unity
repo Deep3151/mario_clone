@@ -571,7 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObj: {fileID: 1804238119}
   player: {fileID: 870784091}
-  chasingDistence: 7
+  chasingDistence: 3
 --- !u!54 &247171024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2390,23 +2390,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5330264789433705725, guid: d9c3a99e115b77247b64401f2dfd431f, type: 3}
   m_PrefabInstance: {fileID: 1541285028}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1514272158 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1730307163504650415, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
-  m_PrefabInstance: {fileID: 607901824571631554}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1514272159 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8997889920530357416, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
-  m_PrefabInstance: {fileID: 607901824571631554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1514272164
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514272158}
+  m_GameObject: {fileID: 1183596021698350957}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -2521,7 +2511,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 991821369}
-  - {fileID: 1514272159}
+  - {fileID: 8408605645537868650}
   m_Father: {fileID: 247171022}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2610,7 +2600,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPoint: {fileID: 991821369}
   bulletSpeed: 50
-  enemyBulletPrefab: {fileID: 1730307163504650415, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
+  enemyBulletPrefab: {fileID: 4514635599392592683, guid: c933c93a7ef602140b5508e5c4e5289f, type: 3}
+  targetObj: {fileID: 1804238119}
+  player: {fileID: 870784091}
+  chasingDistence: 0.5
 --- !u!1001 &1641116327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,7 +2723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.1, y: -24}
+  m_AnchoredPosition: {x: 93.1, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683958637
@@ -3167,3 +3160,13 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1514272164}
   m_SourcePrefab: {fileID: 100100000, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
+--- !u!1 &1183596021698350957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1730307163504650415, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
+  m_PrefabInstance: {fileID: 607901824571631554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8408605645537868650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8997889920530357416, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
+  m_PrefabInstance: {fileID: 607901824571631554}
+  m_PrefabAsset: {fileID: 0}
