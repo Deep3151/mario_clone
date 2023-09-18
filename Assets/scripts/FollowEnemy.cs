@@ -14,21 +14,22 @@ public class FollowEnemy : MonoBehaviour
     void Update()
     {
 
-        if(getDistence() <= chasingDistence)
+        if (getDistence() <= chasingDistence)
         {
-            transform.LookAt(player.transform);
-           /* transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 2 * Time.deltaTime);*/
-            
+            var CalculatedRot = Quaternion.LookRotation(player.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, CalculatedRot, Time.deltaTime);
+            /* transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 2 * Time.deltaTime);*/
+
 
 
         }
-            
-        
+
+
     }
 
     float getDistence()
     {
-        return Vector3.Distance(transform.position, player.transform.position);
+        return Vector3.Distance(player.transform.position, transform.position);
     }
 
 }
