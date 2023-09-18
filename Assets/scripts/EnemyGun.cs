@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class EnemyGun : MonoBehaviour
 
     float getDistence()
     {
-        return Vector3.Distance(transform.position, player.transform.position);
+        return Vector3.Distance(player.transform.position, transform.position);
     }
 }
 

@@ -9,7 +9,7 @@ public class enemyBullet : MonoBehaviour
     void Awake()
     {
         Destroy(gameObject, killPlayer);
-        Physics.IgnoreLayerCollision(9, 10);
+        Physics.IgnoreLayerCollision(gameObject.layer, 9);
         Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
     }
 
