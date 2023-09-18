@@ -19,8 +19,8 @@ TagManager:
   - ground
   - Bullet
   - Player
-  - 
-  - 
+  - EnemyGun
+  - EnemyBullet
   - 
   - 
   - 
