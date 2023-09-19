@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyBullet : MonoBehaviour
 {
-    public float killPlayer = 3;
+    public float killPlayer = 8;
 
     void Awake()
     {

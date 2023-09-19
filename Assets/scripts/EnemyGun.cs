@@ -11,6 +11,10 @@ public class EnemyGun : MonoBehaviour
     public Transform targetObj;
     [SerializeField] GameObject player;
     [SerializeField] float chasingDistence = 0.5f;
+    [SerializeField] private float Firerate = 50f;
+    [SerializeField] private float NextFire = 0.0f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,16 @@ public class EnemyGun : MonoBehaviour
 
         if (getDistence() <= chasingDistence)
         {
-            var bullet = Instantiate(enemyBulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(bulletPoint.forward * bulletSpeed, ForceMode.VelocityChange);
+
+            if( Time.time > NextFire)
+            {
+                NextFire = Time.time + Firerate;
+                var bullet = Instantiate(enemyBulletPrefab, bulletPoint.position, bulletPoint.rotation);
+                bullet.GetComponent<Rigidbody>().AddForce(bulletPoint.forward * bulletSpeed, ForceMode.VelocityChange);
+            }
+
+
+
         }
     }
 
