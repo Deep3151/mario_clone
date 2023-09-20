@@ -32,8 +32,7 @@ public class EnemyGun : MonoBehaviour
             if( Time.time > NextFire)
             {
                 NextFire = Time.time + Firerate;
-                var bullet = Instantiate(enemyBulletPrefab, bulletPoint.position, bulletPoint.rotation);
-                bullet.GetComponent<Rigidbody>().AddForce(bulletPoint.forward * bulletSpeed, ForceMode.VelocityChange);
+                ShootPlayer();
             }
 
 
@@ -45,6 +44,16 @@ public class EnemyGun : MonoBehaviour
     {
         return Vector3.Distance(player.transform.position, transform.position);
     }
+
+
+    public void ShootPlayer()
+    {
+        var bullet = Instantiate(enemyBulletPrefab, bulletPoint.position, bulletPoint.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(bulletPoint.forward * bulletSpeed, ForceMode.VelocityChange);
+    }
+
+    
+
 }
 
 
