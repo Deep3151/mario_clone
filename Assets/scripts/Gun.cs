@@ -20,6 +20,7 @@ public class Gun : MonoBehaviour
     private bool BurstFiring = false;
 
     [SerializeField] private float FireTimer = .35f;
+
     private Coroutine m_routine = null;
 
     void Update()
