@@ -18,7 +18,7 @@ public class PlayerLife : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("EnemyBody"))
+        if (collision.gameObject.CompareTag("EnemyBody") && collision.gameObject.CompareTag("EnemyBullet"))
         {
             Die();
         }
