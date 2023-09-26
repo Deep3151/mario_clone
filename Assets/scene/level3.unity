@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemychar
       objectReference: {fileID: 0}
+    - target: {fileID: 5776999802537523697, guid: 92e6772e30576864f9aaaeb711d5ffa4, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6421709431138832034, guid: 92e6772e30576864f9aaaeb711d5ffa4, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2275,7 +2279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461187043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,6 +2593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1579694246535283785, guid: 53d0a24ab778440499b3034b618f3f6b, type: 3}
+      propertyPath: EnemyBulet
+      value: 
+      objectReference: {fileID: 1730307163504650415, guid: 3ce15e88b23ef7949af3880550160762, type: 3}
     - target: {fileID: 3399539326571757247, guid: 53d0a24ab778440499b3034b618f3f6b, type: 3}
       propertyPath: m_Layer
       value: 8
