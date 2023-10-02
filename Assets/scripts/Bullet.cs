@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         Destroy(gameObject, life);
-        Physics.IgnoreLayerCollision(7, 8);
+        Physics.IgnoreLayerCollision(gameObject.layer, 7);
+        Physics.IgnoreLayerCollision(gameObject.layer, 8);
+        Physics.IgnoreLayerCollision(gameObject.layer, 6);
         Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
     }
 
