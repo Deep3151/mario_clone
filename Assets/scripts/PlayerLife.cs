@@ -7,7 +7,9 @@ public class PlayerLife : MonoBehaviour
 {
 
     bool Dead = false;
-        
+
+    int PlayerHealth = 100;
+       
     void Update()
     {
         if(transform.position.y < -3f && !Dead)
