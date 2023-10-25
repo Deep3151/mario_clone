@@ -8,22 +8,48 @@ public class PlayerLife : MonoBehaviour
 
     bool Dead = false;
 
-    int PlayerHealth = 100;
-       
-    void Update()
+    [SerializeField] private HealthSystem _healthSystem ;
+    [SerializeField] private float _maxHealth = 3;
+    private float _currentHealth;
+
+
+
+   void start()
     {
-        if(transform.position.y < -3f && !Dead)
+        _currentHealth = _maxHealth;
+
+        _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
+    }
+
+   void Update()
+    {
+       /* if(transform.position.y < -3f && !Dead)
         {
             Die();
-        }
+        }*/
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        _currentHealth -= Random.Range(0.5f, 1.5f);
+
+
         if (collision.gameObject.layer == 10 || collision.gameObject.layer == 11)
+        {
+            _healthSystem.updateHealthBar();
+        }
+        
+        else if(_currentHealth < 0)
         {
             Die();
         }
+
+        else
+        {
+            _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
+        }
+
     }
 
     void Die()
