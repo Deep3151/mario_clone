@@ -23,10 +23,10 @@ public class PlayerLife : MonoBehaviour
 
    void Update()
     {
-       /* if(transform.position.y < -3f && !Dead)
+        if(transform.position.y < -3f && !Dead)
         {
-            Die();
-        }*/
+            _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
+        }
 
     }
 
@@ -37,7 +37,7 @@ public class PlayerLife : MonoBehaviour
 
         if (collision.gameObject.layer == 10 || collision.gameObject.layer == 11)
         {
-            _healthSystem.updateHealthBar();
+            _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
         }
         
         else if(_currentHealth < 0)
