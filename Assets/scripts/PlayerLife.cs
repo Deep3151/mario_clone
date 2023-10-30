@@ -14,11 +14,11 @@ public class PlayerLife : MonoBehaviour
 
 
 
-   void start()
+   void Start()
     {
         _currentHealth = _maxHealth;
-
         _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
+
     }
 
    void Update()
@@ -32,15 +32,14 @@ public class PlayerLife : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        _currentHealth -= Random.Range(0.5f, 1.5f);
-
 
         if (collision.gameObject.layer == 10 || collision.gameObject.layer == 11)
         {
+            _currentHealth -= 1f;
             _healthSystem.updateHealthBar(_maxHealth, _currentHealth);
         }
         
-        else if(_currentHealth < 0)
+        if(_currentHealth <= 0)
         {
             Die();
         }
